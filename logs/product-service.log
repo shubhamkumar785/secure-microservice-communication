@@ -1,0 +1,229 @@
+2026-10-01T10:35:01.448+05:30  WARN 19476 --- [product-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (beccd5b8-d579-498b-9b53-037af78b6539)
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:590) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:515) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:410) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1332) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:964) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 13 common frames omitted
+Caused by: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:318) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099) ~[na:na]
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:91) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:130) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:157) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119) ~[na:na]
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:55) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:584) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 19 common frames omitted
+
+2026-10-01T10:35:06.017+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h24m8s626ms977µs).
+2026-10-01T11:13:33.871+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@72b9e64d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:13:48.021+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1aa2ae3a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:27.751+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2b4465a8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:32.150+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7381ef2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:35.647+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5eb1f68 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:47.334+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@d0a5358 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:53.095+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@67de0457 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:55.190+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@65dc4302 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:55.515+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@77915941 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:14:59.327+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@607a0758 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T11:15:33.991+05:30  WARN 19476 --- [product-service] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (e32e293f-23b6-4b9c-be0c-1193a753377a)
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731) ~[HikariCP-7.0.2.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:590) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:515) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:410) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1332) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:964) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 13 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099) ~[na:na]
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:91) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:130) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:157) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119) ~[na:na]
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:55) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:584) ~[mysql-connector-j-9.7.0.jar:9.7.0]
+	... 19 common frames omitted
+
+2026-10-01T12:34:20.620+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m43s181ms500µs600ns).
+2026-10-01T12:34:20.638+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@288b2ba2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.649+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7fd7a718 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.662+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1dbe2a1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.664+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@70fc1f03 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.664+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3dc733b4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.679+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7f6aac73 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.679+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@21fa97d5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.693+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@316e80ee (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.695+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@35b04fe4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:34:20.707+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f136415 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:53:49.225+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6a221c1d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:53:51.647+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@18f62d2d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:53:59.734+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1c41d1ea (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:12.631+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3dee14a3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:13.097+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6849486 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:29.916+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2ff07571 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:29.963+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@30b75171 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:38.351+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1235c345 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:54:39.261+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6dde0840 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:55:02.501+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5b7b2800 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T12:58:10.657+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6ba9d872 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:01:53.686+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49dadd78 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:20.656+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@69a87346 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:25.670+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1d921421 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:30.687+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6f902887 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:35.702+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4ecc2a4a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:40.720+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2dc8d057 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:45.733+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@555db36 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:50.751+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3db098b3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:31:50.751+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m24s554ms445µs201ns).
+2026-10-01T13:31:55.768+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1d2a2229 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:32:00.780+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7fae9f6d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:32:05.796+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6b913e69 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:54:36.560+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@31ec16a7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:54:36.567+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s435ms245µs800ns).
+2026-10-01T13:54:36.586+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4740e3b0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:54:46.017+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@68c6a9c8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:55:07.106+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5ba9ea99 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:55:25.453+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49e7cf40 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:55:32.157+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@60be3dc6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:55:44.070+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@75ccf12f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:55:45.468+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2f7651a8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.823+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m8s179ms700µs900ns).
+2026-10-01T13:59:44.827+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@18787e31 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.827+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@cc379cb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.836+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@11a592ea (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.839+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4a77ff19 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.844+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3da324ae (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.849+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2ab91ff0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.852+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1736fa8f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.854+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@62cc4047 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.854+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@46ee9ee4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T13:59:44.854+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@24ca5f56 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:54.971+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4882bc2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.107+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m40s139ms671µs501ns).
+2026-10-01T15:02:55.194+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@402bf3da (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.268+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5b81626 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.300+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@35254600 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.325+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6ac2b2d0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.371+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@75683971 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.402+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@30a408dc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.443+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2fae5d8e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.484+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@50053e99 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:02:55.492+05:30  WARN 19476 --- [product-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64123659 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2026-10-01T15:47:25.046+05:30  INFO 22704 --- [product-service] [restartedMain] c.e.p.ProductServiceApplication          : Starting ProductServiceApplication using Java 21.0.12.1 with PID 22704 (C:\Users\shubham37.kumar\Desktop\Integrate-two-service\product-service\target\classes started by shubham37.kumar in C:\Users\shubham37.kumar\Desktop\Integrate-two-service)
+2026-10-01T15:47:25.063+05:30 DEBUG 22704 --- [product-service] [restartedMain] c.e.p.ProductServiceApplication          : Running with Spring Boot v4.1.1, Spring v7.0.9
+2026-10-01T15:47:25.067+05:30  INFO 22704 --- [product-service] [restartedMain] c.e.p.ProductServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-10-01T15:47:25.294+05:30  INFO 22704 --- [product-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-01T15:47:25.296+05:30  INFO 22704 --- [product-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-01T15:47:28.962+05:30  INFO 22704 --- [product-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-01T15:47:29.171+05:30  INFO 22704 --- [product-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 1 JPA repository interface.
+2026-10-01T15:47:31.342+05:30  INFO 22704 --- [product-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-10-01T15:47:31.408+05:30  INFO 22704 --- [product-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-01T15:47:31.409+05:30  INFO 22704 --- [product-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-01T15:47:31.587+05:30  INFO 22704 --- [product-service] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6287 ms
+2026-10-01T15:47:32.506+05:30  INFO 22704 --- [product-service] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-01T15:47:32.798+05:30  INFO 22704 --- [product-service] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-01T15:47:34.911+05:30  INFO 22704 --- [product-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-01T15:47:35.027+05:30  INFO 22704 --- [product-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-01T15:47:36.124+05:30  INFO 22704 --- [product-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d73dc8e
+2026-10-01T15:47:36.130+05:30  INFO 22704 --- [product-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-01T15:47:36.314+05:30  WARN 22704 --- [product-service] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.7.43 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-10-01T15:47:36.402+05:30  INFO 22704 --- [product-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://10.0.151.23:3306/acd_admin?useUnicode=yes&characterEncoding=UTF-8]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.7.43
+	Default catalog/schema: acd_admin/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-01T15:47:39.246+05:30  INFO 22704 --- [product-service] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-01T15:47:39.705+05:30  INFO 22704 --- [product-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-01T15:47:40.190+05:30  INFO 22704 --- [product-service] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-01T15:47:41.760+05:30  WARN 22704 --- [product-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-01T15:47:44.936+05:30  INFO 22704 --- [product-service] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-10-01T15:47:44.988+05:30  INFO 22704 --- [product-service] [restartedMain] c.e.p.ProductServiceApplication          : Started ProductServiceApplication in 21.976 seconds (process running for 23.682)
+2026-10-01T15:47:45.015+05:30  WARN 22704 --- [product-service] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-01T15:47:45.021+05:30  WARN 22704 --- [product-service] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-01T15:48:00.908+05:30  INFO 22704 --- [product-service] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-01T15:48:00.908+05:30  INFO 22704 --- [product-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-01T15:48:00.914+05:30  INFO 22704 --- [product-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-01T15:48:02.605+05:30  INFO 22704 --- [product-service] [http-nio-8082-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 798 ms
